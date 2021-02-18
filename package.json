@@ -1,0 +1,35 @@
+{
+  "name": "loggymandias",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "parcel client/src/index.html -d client/dist --open",
+    "build": "parcel build client/src/index.html -d client/dist",
+    "watch": "parcel watch client/src/index.html -d client/dist",
+    "server": "node server/server.js",
+    "server:dev": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathan-tschida/loggymandias.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathan-tschida/loggymandias/issues"
+  },
+  "homepage": "https://github.com/jonathan-tschida/loggymandias#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "fastify": "^3.12.0",
+    "fastify-static": "^3.4.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "parcel-bundler": "^1.12.4"
+  }
+}
