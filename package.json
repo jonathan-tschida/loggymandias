@@ -4,11 +4,15 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "start": "parcel client/src/index.html -d client/dist --open",
+    "start": "npm run build && npm run server",
+    "dev": "concurrently \"npm run build:dev\" \"npm run server:dev\"",
+    "test": "cypress run",
+    "test:ci": "start-server-and-test http-get://localhost:5000",
     "build": "parcel build client/src/index.html -d client/dist",
-    "watch": "parcel watch client/src/index.html -d client/dist",
+    "build:dev": "parcel client/src/index.html -d client/dist",
     "server": "node server/server.js",
-    "server:dev": "nodemon server/server.js"
+    "server:dev": "nodemon server/server.js",
+    "start-then-test": "start-server-and-test http-get://localhost:5000"
   },
   "repository": {
     "type": "git",
@@ -29,7 +33,10 @@
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
+    "concurrently": "^6.0.0",
+    "cypress": "^6.5.0",
     "nodemon": "^2.0.7",
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "start-server-and-test": "^1.12.0"
   }
 }

@@ -8,7 +8,7 @@ server.register(require('fastify-static'), {
 })
 
 server.get('/', (_, res) => {
-  res.sendFile('index.html')
+  res.status(200).sendFile('index.html')
 })
 
 server.get('/api', (_, res) => {
